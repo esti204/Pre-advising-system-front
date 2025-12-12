@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PAS - Prerequisite Check</title>
+  <link rel="stylesheet" href="style6.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Link shared dashboard CSS here if you have one -->
+  <!-- <link rel="stylesheet" href="dashboard-shared.css" /> -->
+</head>
+<body>
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <img src="edu.png" alt="PAS Logo" />
+        <span class="system-name">Pre Advising System</span>
+      </div>
+
+      <nav class="sidebar-menu">
+        <ul>
+          <li class="menu-section-title">Student Menu</li>
+          <li class="menu-item">
+            <a href="dashboard.html">Dashboard</a>
+          </li>
+          <li class="menu-item active">
+            <a href="#">Prerequisite Check</a>
+          </li>
+          <li class="menu-item">
+            <a href="completedcourse.html">Completed Courses</a>
+          </li>
+          <li class="menu-item">
+            <a href="coursereg.html">Course Registration</a>
+          </li>
+          <li class="menu-item">
+            <a href="sectionselection.html">Section Selection</a>
+          </li>
+          <li class="menu-item">
+            <a href="routinecheck.html">Routine Check</a>
+          </li>
+          <li class="menu-item">
+            <a href="token.html">Token System</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <div class="main-content">
+      <!-- Top bar -->
+      <header class="top-bar">
+        <div class="top-bar-left">
+          <h1>Prerequisite Check</h1>
+        </div>
+        <div class="top-bar-right">
+          <span class="user-name">Saad</span>
+          <div class="user-avatar">S</div>
+          <button class="btn-logout" type="button">Logout</button>
+        </div>
+      </header>
+
+      <main class="content-wrapper">
+        <!-- Intro -->
+        <section class="page-header-section">
+          <h2>Check Course Prerequisites</h2>
+          <p>Review which courses you are eligible to take based on your completed prerequisites before registration.</p>
+        </section>
+
+        <!-- Summary cards -->
+        <section class="prereq-summary-row">
+          <div class="prereq-card">
+            <h3>Overall Status</h3>
+            <p>Total Planned Courses: <strong>6</strong></p>
+            <p>Eligible (Prereq OK): <strong>4</strong></p>
+            <p>Not Eligible: <strong>2</strong></p>
+          </div>
+
+          <div class="prereq-card">
+            <h3>Quick Tips</h3>
+            <ul>
+              <li>Complete missing prerequisites before selecting advanced courses.</li>
+              <li>Talk to your advisor if you need a prerequisite waiver.</li>
+            </ul>
+          </div>
+
+          <div class="prereq-card">
+            <h3>Legend</h3>
+            <p><span class="status-pill status-ok">Eligible</span> Prerequisites satisfied</p>
+            <p><span class="status-pill status-missing">Not Eligible</span> One or more prerequisites missing</p>
+          </div>
+        </section>
+
+        <!-- Filters -->
+        <section class="filters-summary-row">
+          <div class="filter-box">
+            <label for="level-filter">Course Level</label>
+            <select id="level-filter" name="level-filter">
+              <option value="all">All Levels</option>
+              <option value="1xx">100 Level</option>
+              <option value="2xx">200 Level</option>
+              <option value="3xx">300 Level</option>
+            </select>
+          </div>
+
+          <div class="filter-box">
+            <label for="dept-filter">Department</label>
+            <select id="dept-filter" name="dept-filter">
+              <option value="all">All Departments</option>
+              <option value="cse">CSE</option>
+              <option value="eee">EEE</option>
+              <option value="mat">MAT</option>
+            </select>
+          </div>
+
+          <div class="filter-box">
+            <label for="search-course">Search Course</label>
+            <input
+              type="text"
+              id="search-course"
+              name="search-course"
+              placeholder="Search by code or title"
+            />
+          </div>
+        </section>
+
+        <!-- Prerequisite table -->
+        <section class="course-table-section">
+          <header class="section-header">
+            <h3>Prerequisite Status by Course</h3>
+          </header>
+
+          <div class="table-wrapper">
+            <table class="course-table">
+              <thead>
+                <tr>
+                  <th>Course Code</th>
+                  <th>Course Title</th>
+                  <th>Required Prerequisite(s)</th>
+                  <th>Your Completed Course(s)</th>
+                  <th>Status</th>
+                  <th>Remarks</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Example 1: Eligible -->
+                <tr>
+                  <td>CSE 242</td>
+                  <td>Data Structures</td>
+                  <td>CSE 141 - Programming Language I</td>
+                  <td>CSE 141 (Completed, Grade: A-)</td>
+                  <td>
+                    <span class="status-pill status-ok">Eligible</span>
+                  </td>
+                  <td>All prerequisites satisfied.</td>
+                </tr>
+
+                <!-- Example 2: Missing prerequisite -->
+                <tr>
+                  <td>CSE 243</td>
+                  <td>Digital Logic Design</td>
+                  <td>None</td>
+                  <td>Intro programming courses completed.</td>
+                  <td>
+                    <span class="status-pill status-ok">Eligible</span>
+                  </td>
+                  <td>No prerequisite required.</td>
+                </tr>
+
+                <tr>
+                  <td>CSE 320</td>
+                  <td>Algorithms</td>
+                  <td>CSE 242 - Data Structures</td>
+                  <td>CSE 242 (In Progress)</td>
+                  <td>
+                    <span class="status-pill status-warning">Conditional</span>
+                  </td>
+                  <td>Must pass CSE 242 before or during this semester.</td>
+                </tr>
+
+                <tr>
+                  <td>CSE 330</td>
+                  <td>Database Systems</td>
+                  <td>CSE 242 - Data Structures</td>
+                  <td>Not yet completed.</td>
+                  <td>
+                    <span class="status-pill status-missing">Not Eligible</span>
+                  </td>
+                  <td>Complete CSE 242 first or request advisor approval.</td>
+                </tr>
+
+                <tr>
+                  <td>MAT 201</td>
+                  <td>Linear Algebra</td>
+                  <td>MAT 101 - Basic Mathematics</td>
+                  <td>MAT 101 (Completed, Grade: B+)</td>
+                  <td>
+                    <span class="status-pill status-ok">Eligible</span>
+                  </td>
+                  <td>Ready to register.</td>
+                </tr>
+
+                <tr>
+                  <td>EEE 201</td>
+                  <td>Basic Electronics</td>
+                  <td>PHY 101 - Physics I</td>
+                  <td>PHY 101 (Not completed)</td>
+                  <td>
+                    <span class="status-pill status-missing">Not Eligible</span>
+                  </td>
+                  <td>Complete PHY 101 or discuss with advisor.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Alerts / guidance -->
+        <section class="alerts-section">
+          <header class="alerts-header">
+            <h2>Prerequisite Alerts</h2>
+          </header>
+
+          <div class="alerts-body">
+            <article class="alert-item clash">
+              <h3>Missing Required Course</h3>
+              <p>You have selected at least one course for which a prerequisite is missing. Adjust your plan or contact your advisor.</p>
+            </article>

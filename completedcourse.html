@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PAS - Completed Courses</title>
+  <link rel="stylesheet" href="style7.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Link your shared dashboard CSS if you have one -->
+  <!-- <link rel="stylesheet" href="dashboard-shared.css" /> -->
+</head>
+<body>
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <img src="edu.png" alt="PAS Logo" />
+        <span class="system-name">Pre Advising System</span>
+      </div>
+
+      <nav class="sidebar-menu">
+        <ul>
+          <li class="menu-section-title">Student Menu</li>
+          <li class="menu-item">
+            <a href="dashboard.html">Dashboard</a>
+          </li>
+          <li class="menu-item">
+            <a href="prereq.html">Prerequisite Check</a>
+          </li>
+          <li class="menu-item active">
+            <a href="#">Completed Courses</a>
+          </li>
+          <li class="menu-item">
+            <a href="coursereg.html">Course Registration</a>
+          </li>
+          <li class="menu-item">
+            <a href="sectionselection.html">Section Selection</a>
+          </li>
+          <li class="menu-item">
+            <a href="routinecheck.html">Routine Check</a>
+          </li>
+          <li class="menu-item">
+            <a href="token.html">Token System</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <div class="main-content">
+      <!-- Top bar -->
+      <header class="top-bar">
+        <div class="top-bar-left">
+          <h1>Completed Courses</h1>
+        </div>
+        <div class="top-bar-right">
+          <span class="user-name">Saad</span>
+          <div class="user-avatar">S</div>
+          <button class="btn-logout" type="button">Logout</button>
+        </div>
+      </header>
+
+      <main class="content-wrapper">
+        <!-- Intro -->
+        <section class="page-header-section">
+          <h2>Your Academic History</h2>
+          <p>View all the courses you have completed so far, with grades, credits, and semester-wise details.</p>
+        </section>
+
+        <!-- Summary cards -->
+        <section class="completed-summary-row">
+          <div class="completed-card">
+            <h3>Overall Summary</h3>
+            <p>Total Completed Courses: <strong>18</strong></p>
+            <p>Total Earned Credits: <strong>54</strong></p>
+            <p>Current CGPA: <strong>3.52</strong></p>
+          </div>
+
+          <div class="completed-card">
+            <h3>Last Semester (Example)</h3>
+            <p>Semester: <strong>Fall 2025</strong></p>
+            <p>Completed Credits: <strong>15</strong></p>
+            <p>SGPA: <strong>3.60</strong></p>
+          </div>
+
+          <div class="completed-card">
+            <h3>Legend</h3>
+            <p><span class="grade-pill grade-strong">A / A-</span> Excellent performance</p>
+            <p><span class="grade-pill grade-normal">B+ / B / B-</span> Good performance</p>
+            <p><span class="grade-pill grade-risk">C and below</span> Needs improvement</p>
+          </div>
+        </section>
+
+        <!-- Filters -->
+        <section class="filters-summary-row">
+          <div class="filter-box">
+            <label for="semester-filter">Semester</label>
+            <select id="semester-filter" name="semester-filter">
+              <option value="all">All Semesters</option>
+              <option value="spring-2025">Spring 2025</option>
+              <option value="fall-2025">Fall 2025</option>
+              <option value="spring-2024">Spring 2024</option>
+            </select>
+          </div>
+
+          <div class="filter-box">
+            <label for="dept-filter">Department</label>
+            <select id="dept-filter" name="dept-filter">
+              <option value="all">All Departments</option>
+              <option value="cse">CSE</option>
+              <option value="eee">EEE</option>
+              <option value="mat">MAT</option>
+            </select>
+          </div>
+
+          <div class="filter-box">
+            <label for="search-course">Search Course</label>
+            <input
+              type="text"
+              id="search-course"
+              name="search-course"
+              placeholder="Search by code or title"
+            />
+          </div>
+        </section>
+
+        <!-- Completed courses table -->
+        <section class="course-table-section">
+          <header class="section-header">
+            <h3>List of Completed Courses</h3>
+          </header>
+
+          <div class="table-wrapper">
+            <table class="course-table">
+              <thead>
+                <tr>
+                  <th>Semester</th>
+                  <th>Course Code</th>
+                  <th>Course Title</th>
+                  <th>Credit</th>
+                  <th>Grade</th>
+                  <th>Grade Point</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Sample rows -->
+                <tr>
+                  <td>Fall 2025</td>
+                  <td>CSE 242</td>
+                  <td>Data Structures</td>
+                  <td>3.0</td>
+                  <td><span class="grade-pill grade-strong">A-</span></td>
+                  <td>3.7</td>
+                  <td>Passed</td>
+                </tr>
+                <tr>
+                  <td>Fall 2025</td>
+                  <td>CSE 243</td>
+                  <td>Digital Logic Design</td>
+                  <td>3.0</td>
+                  <td><span class="grade-pill grade-normal">B+</span></td>
+                  <td>3.3</td>
+                  <td>Passed</td>
+                </tr>
+                <tr>
+                  <td>Fall 2025</td>
+                  <td>MAT 201</td>
+                  <td>Linear Algebra</td>
+                  <td>3.0</td>
+                  <td><span class="grade-pill grade-strong">A</span></td>
+                  <td>4.0</td>
+                  <td>Passed</td>
+                </tr>
+                <tr>
+                  <td>Spring 2025</td>
+                  <td>CSE 141</td>
+                  <td>Programming Language I</td>
+                  <td>3.0</td>
+                  <td><span class="grade-pill grade-normal">B</span></td>
+                  <td>3.0</td>
+                  <td>Passed</td>
+                </tr>
+                <tr>
+                  <td>Spring 2025</td>
+                  <td>ENG 101</td>
+                  <td>English Language I</td>
+                  <td>3.0</td>
+                  <td><span class="grade-pill grade-normal">B+</span></td>
+                  <td>3.3</td>
+                  <td>Passed</td>
+                </tr>
+                <tr>
+                  <td>Spring 2024</td>
+                  <td>MAT 101</td>
+                  <td>Basic Mathematics</td>
+                  <td>3.0</td>
+                  <td><span class="grade-pill grade-strong">A</span></td>
+                  <td>4.0</td>
+                  <td>Passed</td>
+                </tr>
+                <tr>
+                  <td>Spring 2024</td>
+                  <td>PHY 101</td>
+                  <td>Physics I</td>
+                  <td>3.0</td>
+                  <td><span class="grade-pill grade-risk">C+</span></td>
+                  <td>2.3</td>
+                  <td>Passed</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+                <!-- Alerts / notes -->
+        <section class="alerts-section">
+          <header class="alerts-header">
+            <h2>Completed Course Notes</h2>
+          </header>
+
+          <div class="alerts-body">
+            <article class="alert-item info">
+              <h3>CGPA Calculation</h3>
+              <p>CGPA is calculated using all completed courses and their credit-weighted grade points.</p>
+            </article>
+
+            <article class="alert-item clash">
+              <h3>Course Re-take Policy</h3>
+              <p>If you retake a course, the latest grade may replace the older one depending on university rules. Check with your advisor before planning re-takes.</p>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

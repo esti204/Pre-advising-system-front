@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PAS - Routine Check</title>
+  <link rel="stylesheet" href="style4.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Link your shared dashboard CSS here if you are reusing it -->
+  <!-- <link rel="stylesheet" href="dashboard-shared.css" /> -->
+</head>
+<body>
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <img src="edu.png" alt="PAS Logo" />
+        <span class="system-name">Pre Advising System</span>
+      </div>
+
+      <nav class="sidebar-menu">
+        <ul>
+          <li class="menu-section-title">Student Menu</li>
+          <li class="menu-item">
+            <a href="dashboard.html">Dashboard</a>
+          </li>
+          <li class="menu-item">
+            <a href="prereq.html">Prerequisite Check</a>
+          </li>
+          <li class="menu-item">
+            <a href="completedcourse.html">Completed Courses</a>
+          </li>
+          <li class="menu-item">
+            <a href="coursereg.html">Course Registration</a>
+          </li>
+          <li class="menu-item">
+            <a href="sectionselection.html">Section Selection</a>
+          </li>
+          <li class="menu-item active">
+            <a href="#">Routine Check</a>
+          </li>
+          <li class="menu-item">
+            <a href="token.html">Token System</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <div class="main-content">
+      <!-- Top bar -->
+      <header class="top-bar">
+        <div class="top-bar-left">
+          <h1>Routine Check</h1>
+        </div>
+        <div class="top-bar-right">
+          <span class="user-name">Saad</span>
+          <div class="user-avatar">S</div>
+          <button class="btn-logout" type="button">Logout</button>
+        </div>
+      </header>
+
+      <main class="content-wrapper">
+        <!-- Intro -->
+        <section class="page-header-section">
+          <h2>Weekly Class Routine</h2>
+          <p>View your weekly schedule based on the sections you have selected and check for clashes or gaps.</p>
+        </section>
+
+        <!-- Controls row: semester + view options -->
+        <section class="filters-summary-row">
+          <div class="filter-box">
+            <label for="routine-semester">Semester</label>
+            <select id="routine-semester" name="routine-semester">
+              <option value="spring-2026">Spring 2026</option>
+              <option value="fall-2025">Fall 2025</option>
+            </select>
+          </div>
+
+          <div class="filter-box">
+            <label for="view-type">View</label>
+            <select id="view-type" name="view-type">
+              <option value="week">Weekly View</option>
+              <option value="day">Day-wise View</option>
+            </select>
+          </div>
+
+          <div class="summary-box">
+            <p>Clash Status: <strong>No clashes detected</strong></p>
+            <p>Total Courses: <strong>3</strong></p>
+          </div>
+        </section>
+
+        <!-- Routine grid -->
+        <section class="routine-section">
+          <header class="section-header">
+            <h3>Weekly Routine</h3>
+          </header>
+
+          <div class="routine-legend">
+            <span class="legend-item">
+              <span class="legend-color legend-normal"></span> Regular Class
+            </span>
+            <span class="legend-item">
+              <span class="legend-color legend-lab"></span> Lab Class
+            </span>
+            <span class="legend-item">
+              <span class="legend-color legend-clash"></span> Clash / Overlap
+            </span>
+          </div>
+
+          <!-- Simple timetable layout: days as columns, time slots as rows -->
+          <div class="routine-grid">
+            <!-- Header row -->
+            <div class="routine-row routine-row-header">
+              <div class="routine-cell routine-time-cell">Time</div>
+              <div class="routine-cell">Sunday</div>
+              <div class="routine-cell">Monday</div>
+              <div class="routine-cell">Tuesday</div>
+              <div class="routine-cell">Wednesday</div>
+              <div class="routine-cell">Thursday</div>
+            </div>
+
+            <!-- 9:00–10:00 -->
+            <div class="routine-row">
+              <div class="routine-cell routine-time-cell">09:00–10:00</div>
+              <div class="routine-cell"></div>
+              <div class="routine-cell routine-class">
+                <div class="class-card">
+                  <span class="class-code">CSE 243 (B)</span>
+                  <span class="class-title">Digital Logic Design</span>
+                  <span class="class-room">Room 210</span>
+                </div>
+              </div>
+              <div class="routine-cell"></div>
+              <div class="routine-cell routine-class routine-lab">
+                <div class="class-card">
+                  <span class="class-code">CSE 243L</span>
+                  <span class="class-title">DLD Lab</span>
+                  <span class="class-room">Lab 302</span>
+                </div>
+              </div>
+              <div class="routine-cell"></div>
+            </div>
+
+            <!-- 10:00–11:30 -->
+            <div class="routine-row">
+              <div class="routine-cell routine-time-cell">10:00–11:30</div>
+              <div class="routine-cell routine-class">
+                <div class="class-card">
+                  <span class="class-code">CSE 242 (A)</span>
+                  <span class="class-title">Data Structures</span>
+                  <span class="class-room">Room 502</span>
+                </div>
+              </div>
+              <div class="routine-cell"></div>
+              <div class="routine-cell routine-class routine-clash">
+                <div class="class-card">
+                  <span class="class-code">CSE 242 (B)</span>
+                  <span class="class-title">Data Structures</span>
+                  <span class="class-room">Room 305</span>
+                </div>
+              </div>
+              <div class="routine-cell"></div>
+              <div class="routine-cell"></div>
+            </div>
+
+            <!-- 11:40–01:10 -->
+            <div class="routine-row">
+              <div class="routine-cell routine-time-cell">11:40–01:10</div>
+              <div class="routine-cell routine-class">
+                <div class="class-card">
+                  <span class="class-code">MAT 201</span>
+                  <span class="class-title">Linear Algebra</span>
+                  <span class="class-room">Room 210</span>
+                </div>
+              </div>
+              <div class="routine-cell"></div>
+              <div class="routine-cell routine-class">
+                <div class="class-card">
+                  <span class="class-code">CSE 243 (A)</span>
+                  <span class="class-title">Digital Logic Design</span>
+                  <span class="class-room">Room 210</span>
+                </div>
+              </div>
+              <div class="routine-cell"></div>
+              <div class="routine-cell"></div>
+            </div>
+
+            <!-- 02:00–03:30 -->
+            <div class="routine-row">
+              <div class="routine-cell routine-time-cell">02:00–03:30</div>
+              <div class="routine-cell"></div>
+              <div class="routine-cell routine-class">
+                <div class="class-card">
+                  <span class="class-code">CSE 242 (B)</span>
+                  <span class="class-title">Data Structures</span>
+                  <span class="class-room">Room 305</span>
+                </div>
+              </div>
+              <div class="routine-cell"></div>
+              <div class="routine-cell"></div>
+              <div class="routine-cell"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Summary / warning section -->
+        <section class="alerts-section">
+          <header class="alerts-header">
+            <h2>Routine Alerts</h2>
+          </header>
+
+          <div class="alerts-body">
+            <article class="alert-item clash">
+              <h3>Possible Clash</h3>
+              <p>CSE 242 (A) overlaps with another selected section on Tuesday 10:00–11:30.</p>
+              <button class="alert-action" type="button">Review sections</button>
+            </article>
+
+            <article class="alert-item info">
+              <h3>Advising Tip</h3>
+              <p>Try to balance classes across the week to avoid long gaps and heavy single days.</p>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

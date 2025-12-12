@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PAS - Course Registration</title>
+  <link rel="stylesheet" href="style2.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+  <div class="dashboard-layout">
+    <!-- Sidebar (same style as student dashboard, just different active item) -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <img src="edu.png" alt="PAS Logo" />
+        <span class="system-name">Pre Advising System</span>
+      </div>
+
+      <nav class="sidebar-menu">
+        <ul>
+          <li class="menu-section-title">Student Menu</li>
+          <li class="menu-item">
+            <a href="dashboard.html">Dashboard</a>
+          </li>
+          <li class="menu-item">
+            <a href="prereq.html">Prerequisite Check</a>
+          </li>
+          <li class="menu-item">
+            <a href="completedcourse.html">Completed Courses</a>
+          </li>
+          <li class="menu-item active">
+            <a href="#">Course Registration</a>
+          </li>
+          <li class="menu-item">
+            <a href="sectionselection.html">Section Selection</a>
+          </li>
+          <li class="menu-item">
+            <a href="routinecheck.html">Routine Check</a>
+          </li>
+          <li class="menu-item">
+            <a href="token.html">Token System</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <div class="main-content">
+      <!-- Top bar -->
+      <header class="top-bar">
+        <div class="top-bar-left">
+          <h1>Course Registration</h1>
+        </div>
+        <div class="top-bar-right">
+          <span class="user-name">Saad</span>
+          <div class="user-avatar">S</div>
+          <button class="btn-logout" type="button">Logout</button>
+        </div>
+      </header>
+
+      <main class="content-wrapper">
+        <!-- Page intro -->
+        <section class="page-header-section">
+          <h2>Register Courses for Upcoming Semester</h2>
+          <p>Select courses you want to take and review credits before final submission.</p>
+        </section>
+
+        <!-- Filters / summary row -->
+        <section class="filters-summary-row">
+          <div class="filter-box">
+            <label for="semester-select">Semester</label>
+            <select id="semester-select" name="semester">
+              <option value="spring-2026">Spring 2026</option>
+              <option value="fall-2025">Fall 2025</option>
+            </select>
+          </div>
+
+          <div class="filter-box">
+            <label for="search-course">Search course</label>
+            <input
+              type="text"
+              id="search-course"
+              name="search-course"
+              placeholder="Search by code or name"
+            />
+          </div>
+
+          <div class="summary-box">
+            <p>Total Selected Credits: <strong>0</strong></p>
+            <p>Allowed Credit Range: <strong>12–18</strong></p>
+          </div>
+        </section>
+
+        <!-- Course table -->
+        <section class="course-table-section">
+          <header class="section-header">
+            <h3>Available Courses</h3>
+          </header>
+
+          <div class="table-wrapper">
+            <table class="course-table">
+              <thead>
+                <tr>
+                  <th>Select</th>
+                  <th>Course Code</th>
+                  <th>Course Title</th>
+                  <th>Prerequisite</th>
+                  <th>Credit</th>
+                  <th>Section</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Example row 1 -->
+                <tr>
+                  <td>
+                    <input type="checkbox" name="select-course" />
+                  </td>
+                  <td>CSE 242</td>
+                  <td>Data Structures</td>
+                  <td>CSE 141</td>
+                  <td>3.0</td>
+                  <td>
+                    <select name="section-cse242">
+                      <option value="">Select</option>
+                      <option value="A">Section A</option>
+                      <option value="B">Section B</option>
+                    </select>
+                  </td>
+                  <td>
+                    <span class="status-pill status-open">Open</span>
+                  </td>
+                </tr>
+
+                <!-- Example row 2 -->
+                <tr>
+                  <td>
+                    <input type="checkbox" name="select-course" />
+                  </td>
+                  <td>CSE 243</td>
+                  <td>Digital Logic Design</td>
+                  <td>None</td>
+                  <td>3.0</td>
+                  <td>
+                    <select name="section-cse243">
+                      <option value="">Select</option>
+                      <option value="A">Section A</option>
+                      <option value="B">Section B</option>
+                    </select>
+                  </td>
+                  <td>
+                    <span class="status-pill status-waiting">Waitlist</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="checkbox" name="select-course" />
+                  </td>
+                  <td>MATH 201</td>
+                  <td>Linear Algebra</td>
+                  <td>None</td>
+                  <td>3.0</td>
+                  <td>
+                    <select name="section-cse243">
+                      <option value="">Select</option>
+                      <option value="A">Section A</option>
+                      <option value="B">Section B</option>
+                    </select>
+                  </td>
+                  <td>
+                    <span class="status-pill status-closed">Closed</span>
+                  </td>
+                </tr>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PAS Dashboard - Student</title>
+  <link rel="stylesheet" href="style1.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <img src="edu.png" alt="PAS Logo" />
+        <span class="system-name">Pre Advising System</span>
+      </div>
+
+      <nav class="sidebar-menu">
+        <ul>
+          <li class="menu-section-title">Student Menu</li>
+          <li class="menu-item active">
+            <a href="#">Dashboard</a>
+          </li>
+          <li class="menu-item">
+            <a href="prereq.html">Prerequisite Check</a>
+          </li>
+          <li class="menu-item">
+            <a href="completedcourse.html">Completed Courses</a>
+          </li>
+          <li class="menu-item">
+            <a href="coursereg.html">Course Registration</a>
+          </li>
+          <li class="menu-item">
+            <a href="sectionselection.html">Section Selection</a>
+          </li>
+          <li class="menu-item">
+            <a href="routinecheck.html">Routine Check</a>
+          </li>
+          <li class="menu-item">
+            <a href="token.html">Token System</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main content area -->
+    <div class="main-content">
+      <!-- Top header bar -->
+      <header class="top-bar">
+        <div class="top-bar-left">
+          <h1>Dashboard</h1>
+        </div>
+        <div class="top-bar-right">
+          <span class="user-name">Welcome, Saad</span>
+          <div class="user-avatar" aria-hidden="true">S</div>
+          <button class="btn-logout" type="button">Logout</button>
+        </div>
+      </header>
+
+      <!-- Content below header -->
+      <main class="content-wrapper">
+        <!-- Welcome and quick text -->
+        <section class="welcome-section">
+          <h2>Welcome, Saad</h2>
+          <p>Here is a quick overview of your advising status for this semester.</p>
+        </section>
+
+        <!-- Overview cards -->
+        <section class="overview-section">
+          <div class="overview-card">
+            <h3>Current Courses / Schedule</h3>
+            <ul>
+              <li>CSE 242 - Data Structures</li>
+              <li>CSE 243 - Digital Logic Design</li>
+              <li>MAT 201 - Linear Algebra</li>
+            </ul>
+            <a href="#" class="card-link">View full schedule</a>
+          </div>
+
+          <div class="overview-card">
+            <h3>Advising Token Status</h3>
+            <p>Token Number: <strong>#23</strong></p>
+            <p>Status: <span class="status-pill status-active">Confirmed</span></p>
+            <a href="#" class="card-link">View token details</a>
+          </div>
+
+          <div class="overview-card">
+            <h3>Notifications / Alerts</h3>
+            <ul>
+              <li>Advising starts on 15 January.</li>
+              <li>Section selection opens next week.</li>
+            </ul>
+            <a href="#" class="card-link">View all notifications</a>
+          </div>
+        </section>
+
+        <!-- Class clash / alerts section -->
+        <section class="alerts-section">
+          <header class="alerts-header">
+            <h2>Class Clash / Alerts</h2>
+          </header>
+
+          <div class="alerts-body">
+            <!-- Example clash item -->
+            <article class="alert-item clash">
+              <h3>Class Clash Detected</h3>
+              <p>CSE 242 (Section A) overlaps with CSE 243 (Section B) on Sunday 10:00–11:30.</p>
+              <button type="button" class="alert-action">Resolve clash</button>
+            </article>
+
+            <!-- Example no clash info -->
+            <article class="alert-item info">
+              <h3>Advising Reminder</h3>
+              <p>Meet your advisor before the deadline to finalize your course plan.</p>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,441 @@
+/* ===== Base / shared styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #f4f6fb;
+  color: #2c3e50;
+}
+
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  width: 260px;
+  background-color: #253347;
+  color: #ecf0f1;
+  display: flex;
+  flex-direction: column;
+  padding: 18px 16px;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.sidebar-logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #ffffff;
+}
+
+.system-name {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.sidebar-menu ul {
+  list-style: none;
+}
+
+.menu-section-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #95a5a6;
+  margin-bottom: 10px;
+}
+
+.menu-item {
+  margin-bottom: 6px;
+}
+
+.menu-item a {
+  display: block;
+  padding: 9px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #ecf0f1;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.menu-item a:hover {
+  background-color: #34495e;
+}
+
+.menu-item.active a {
+  background-color: #1abc9c;
+  color: #ffffff;
+}
+
+/* ===== Top bar / header ===== */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-bar {
+  height: 60px;
+  padding: 0 24px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e1e4e8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.top-bar-left h1 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-name {
+  font-size: 14px;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #1abc9c;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.btn-logout {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: 1px solid #e74c3c;
+  background-color: transparent;
+  color: #e74c3c;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-logout:hover {
+  background-color: #e74c3c;
+  color: #ffffff;
+}
+
+/* ===== Page wrapper & intro ===== */
+.content-wrapper {
+  padding: 20px 24px 24px;
+}
+
+.page-header-section h2 {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.page-header-section p {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* ===== Token top row (form + summary) ===== */
+.token-top-row {
+  display: grid;
+  grid-template-columns: 2fr 1.4fr;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.token-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 16px 16px 18px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.token-card h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Form inside token card */
+.token-form .form-group {
+  margin-bottom: 12px;
+}
+
+.token-form label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #374151;
+}
+
+.token-form select,
+.token-form input[type="date"],
+.token-form textarea {
+  width: 100%;
+  padding: 8px 9px;
+  font-size: 13px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.token-form select:focus,
+.token-form input[type="date"]:focus,
+.token-form textarea:focus {
+  border-color: #1abc9c;
+  box-shadow: 0 0 0 2px rgba(26, 188, 156, 0.2);
+}
+
+.token-info-text {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 2px;
+  margin-bottom: 10px;
+}
+
+/* Buttons (primary / secondary / danger) */
+.btn-primary,
+.btn-secondary,
+.btn-danger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  font-size: 13px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary {
+  background-color: #1abc9c;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #15967e;
+  box-shadow: 0 4px 10px rgba(22, 163, 129, 0.35);
+}
+
+.btn-secondary {
+  background-color: #e5e7eb;
+  color: #111827;
+}
+
+.btn-secondary:hover {
+  background-color: #d1d5db;
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+  color: #ffffff;
+}
+
+.btn-danger:hover {
+  background-color: #c0392b;
+}
+
+/* Current token summary card */
+.token-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.token-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+.token-summary-row .label {
+  color: #6b7280;
+}
+
+.token-summary-row .value {
+  font-weight: 500;
+}
+
+.token-small-text {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 8px;
+}
+
+.token-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Status pills */
+.status-pill {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+}
+
+.status-active {
+  background-color: #e6f9f2;
+  color: #0f766e;
+}
+
+.status-waiting {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.status-completed {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+.status-inprogress {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+/* ===== Token queue table ===== */
+.token-queue-section {
+  margin-top: 22px;
+}
+
+.section-header h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.table-wrapper {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  overflow: auto;
+}
+
+/* Token queue table */
+.course-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.course-table thead {
+  background-color: #f1f5f9;
+}
+
+.course-table th,
+.course-table td {
+  padding: 10px 12px;
+  font-size: 13px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.course-table th {
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.course-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+/* ===== Alerts / notes section (same style as other pages) ===== */
+.alerts-section {
+  margin-top: 22px;
+}
+
+.alerts-header h2 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.alerts-body {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.alert-item {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 14px 14px 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.alert-item h3 {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.alert-item p {
+  font-size: 13px;
+  color: #4b5563;
+}
+
+.alert-item.clash {
+  border-left: 4px solid #e74c3c;
+}
+
+.alert-item.info {
+  border-left: 4px solid #3498db;
+}
+
+/* ===== Responsive tweaks ===== */
+@media (max-width: 992px) {
+  .token-top-row {
+    grid-template-columns: 1fr;
+  }
+
+  .alerts-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none; /* simple mobile behaviour; you can replace with a drawer later */
+  }
+
+  .dashboard-layout {
+    flex-direction: column;
+  }
+
+  .top-bar {
+    padding: 0 16px;
+  }
+
+  .content-wrapper {
+    padding: 16px;
+  }
+}

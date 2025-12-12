@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PAS - Token System</title>
+  <link rel="stylesheet" href="style5.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Link your shared dashboard CSS file here (same one used for other pages) -->
+  <!-- <link rel="stylesheet" href="dashboard-shared.css" /> -->
+</head>
+<body>
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <img src="edu.png" alt="PAS Logo">
+        <span class="system-name">Pre Advising System</span>
+      </div>
+
+      <nav class="sidebar-menu">
+        <ul>
+          <li class="menu-section-title">Student Menu</li>
+          <li class="menu-item">
+            <a href="dashboard.html">Dashboard</a>
+          </li>
+          <li class="menu-item">
+            <a href="prereq.html">Prerequisite Check</a>
+          </li>
+          <li class="menu-item">
+            <a href="completedcourse.html">Completed Courses</a>
+          </li>
+          <li class="menu-item">
+            <a href="coursereg.html">Course Registration</a>
+          </li>
+          <li class="menu-item">
+            <a href="sectionselection.html">Section Selection</a>
+          </li>
+          <li class="menu-item">
+            <a href="routinecheck.html">Routine Check</a>
+          </li>
+          <li class="menu-item active">
+            <a href="#">Token System</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <div class="main-content">
+      <!-- Top bar -->
+      <header class="top-bar">
+        <div class="top-bar-left">
+          <h1>Token System</h1>
+        </div>
+        <div class="top-bar-right">
+          <span class="user-name">Saad</span>
+          <div class="user-avatar">S</div>
+          <button class="btn-logout" type="button">Logout</button>
+        </div>
+      </header>
+
+      <main class="content-wrapper">
+        <!-- Intro -->
+        <section class="page-header-section">
+          <h2>Reserve Your Advising Token</h2>
+          <p>Claim a token for advising on a first-come, first-served basis and see your position in the queue.</p>
+        </section>
+
+        <!-- Top row: token request + current token summary -->
+        <section class="token-top-row">
+          <!-- Request / claim form -->
+          <div class="token-card">
+            <h3>Request a New Token</h3>
+            <form class="token-form">
+              <div class="form-group">
+                <label for="advisor-select">Select Advisor</label>
+                <select id="advisor-select" name="advisor">
+                  <option value="">Choose an advisor</option>
+                  <option value="tanvir-azhar">Tanvir Azhar</option>
+                  <option value="fatema-rahman">Dr. Fatema Rahman</option>
+                  <option value="ahmed-khan">Engr. Ahmed Khan</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="slot-date">Preferred Date</label>
+                <input type="date" id="slot-date" name="slot-date">
+              </div>
+
+              <div class="form-group">
+                <label for="slot-time">Preferred Time Slot</label>
+                <select id="slot-time" name="slot-time">
+                  <option value="">Choose time</option>
+                  <option value="9-10">09:00–10:00</option>
+                  <option value="10-11">10:00–11:00</option>
+                  <option value="11-12">11:00–12:00</option>
+                  <option value="2-3">02:00–03:00</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="token-note">Short Note (optional)</label>
+                <textarea id="token-note" name="token-note" rows="3"
+                  placeholder="Example: Need help with section clashes and extra course."></textarea>
+              </div>
+
+              <!-- Info text (no backend yet; this is just UI) -->
+              <p class="token-info-text">
+                Tokens are assigned on a first-come, first-served basis. Your final time may differ based on advisor availability.
+              </p>
+
+              <button type="button" class="btn-primary">
+                Request Token
+              </button>
+            </form>
+          </div>
+
+          <!-- Current token details -->
+          <div class="token-card token-summary">
+            <h3>Your Current Token</h3>
+
+            <!-- Example static data for UI demo -->
+            <div class="token-summary-row">
+              <span class="label">Token Number</span>
+              <span class="value">#23</span>
+            </div>
+            <div class="token-summary-row">
+              <span class="label">Status</span>
+              <span class="value status-pill status-active">Confirmed</span>
+            </div>
+            <div class="token-summary-row">
+              <span class="label">Advisor</span>
+              <span class="value">Tanvir Azhar</span>
+            </div>
+            <div class="token-summary-row">
+              <span class="label">Date</span>
+              <span class="value">15 January 2026</span>
+            </div>
+            <div class="token-summary-row">
+              <span class="label">Time</span>
+              <span class="value">10:00–10:15 AM</span>
+            </div>
+            <div class="token-summary-row">
+              <span class="label">Position in Queue</span>
+              <span class="value">5th</span>
+            </div>
+
+            <p class="token-small-text">
+              Please arrive 10 minutes before your scheduled time. Changes to your token may depend on advisor approval.
+            </p>
+
+            <div class="token-actions">
+              <button type="button" class="btn-secondary">
+                Reschedule
+              </button>
+              <button type="button" class="btn-danger">
+                Cancel Token
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Token queue table -->
+        <section class="token-queue-section">
+          <header class="section-header">
+            <h3>Today's Token Queue (For Your Advisor)</h3>
+          </header>
+
+          <div class="table-wrapper">
+            <table class="course-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Token</th>
+                  <th>Student Name</th>
+                  <th>Student ID</th>
+                  <th>Time Slot</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>#18</td>
+                  <td>Rakib Hasan</td>
+                  <td>233001001</td>
+                  <td>09:00–09:15</td>
+                  <td><span class="status-pill status-completed">Completed</span></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>#19</td>
+                  <td>Sumaiya Akter</td>
+                  <td>233001145</td>
+                  <td>09:15–09:30</td>
+                  <td><span class="status-pill status-inprogress">In Progress</span></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>#20</td>
+                  <td>Mahin Rahman</td>
+                  <td>233001210</td>
+                  <td>09:30–09:45</td>
+                  <td><span class="status-pill status-waiting">Waiting</span></td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>#21</td>
+                  <td>Jannat Ara</td>
+                  <td>233001332</td>
+                  <td>09:45–10:00</td>
+                  <td><span class="status-pill status-waiting">Waiting</span></td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>#23</td>
+                  <td>Saad Iqbal</td>
+                  <td>233002212</td>
+                  <td>10:00–10:15</td>
+                  <td><span class="status-pill status-active">Confirmed</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Info / alerts -->
+        <section class="alerts-section">
+          <header class="alerts-header">
+            <h2>Token System Notes</h2>
+          </header>
+
+          <div class="alerts-body">
+            <article class="alert-item info">
+              <h3>First Come, First Served</h3>
+              <p>Tokens are generated based on the time you request them. Earlier requests get earlier slots.</p>
+            </article>
+
+            <article class="alert-item clash">
+              <h3>Avoid Time Conflicts</h3>
+              <p>Make sure your advising time does not overlap with your class routine so you do not miss any classes.</p>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

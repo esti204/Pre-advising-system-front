@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login to PAS</title>
+  <link rel="stylesheet" href="stylelogin.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+  <!-- Main container -->
+  <div class="login-page">
+    <!-- Logo / System name -->
+    <header class="login-header">
+      <!-- Replace src with your university/PAS logo -->
+      <img src="edu.png" alt="University Logo" class="logo" />
+      <h1>Pre Advising System (PAS)</h1>
+      <h2>Login to PAS</h2>
+    </header>
+
+    <!-- Login card -->
+    <main class="login-card">
+      <form class="login-form" autocomplete="off">
+        <!-- University Email -->
+        <div class="form-group">
+          <label for="email">University Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="example@university.edu"
+            required
+          />
+        </div>
+
+        <!-- Username -->
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Enter your username"
+            required
+          />
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            required
+          />
+        </div>
+
+        <!-- Role selection -->
+        <fieldset class="form-group role-group">
+          <legend>Role</legend>
+          <label>
+            <input
+              type="radio"
+              name="role"
+              value="student"
+              required
+            />
+            Student
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="role"
+              value="faculty"
+            />
+            Faculty
+          </label>
+        </fieldset>
+
+        <!-- Error message placeholder (for future JS/backend) -->
+        <p class="error-message" aria-live="polite">
+          <!-- Example: Invalid email or password -->
+        </p>
+
+        <!-- Login button (will visually look disabled via CSS/JS until fields are filled) -->
+        <button type="submit" class="btn-login">
+          Login
+        </button> 
+
+        <!-- Optional links -->
+        <div class="extra-links">
+          <a href="#" class="forgot-password">Forgot Password?</a>
+        </div>
+      </form>
+    </main>
+  </div>
+</body>
+</html>
